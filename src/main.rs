@@ -67,13 +67,9 @@ fn main() {
 }
 
 
-fn print_score(wins:usize,losses:usize,draws:usize, quiet:bool){
-    if !quiet{
-        println!("------------GAME OVER-------------");
-        println!("\ttotal  wins:\t{wins}\n\ttotal losses:\t{losses}\n\ttotal  draws:\t{draws}");
-    } else{
-        println!("wins: {wins}\tdraws: {draws}\tlosses: {losses}");
-    }
+fn print_score(wins:usize,losses:usize,draws:usize, _quiet:bool){
+    println!("------------GAME OVER-------------");
+    println!("\ttotal  wins:\t{wins}\n\ttotal losses:\t{losses}\n\ttotal  draws:\t{draws}");
 }
 
 fn validate_input(input:&str,verbose:bool) -> String{
@@ -113,7 +109,7 @@ fn print_result(player:char,cpu:char, result:char){
 }
 
 fn get_computer_choice() -> char{
-    let rng = rand::random_range(0..=3);
+    let rng = rand::random_range(0..=2);
     if rng == 0{
         return 'r';
     } else if rng == 1{
